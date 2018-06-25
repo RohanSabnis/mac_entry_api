@@ -103,12 +103,40 @@ delete_mac_entry_for_specific_topo() {
 
 }
 
+void
+delete_non_existing_mac_entry_for_specific_topo() {
+
+    char *mac_addr_str;
+    uchar mac_address[MAC_ADDR_BYTES];
+
+    mac_addr_str = "CC:CC:CC:CC:CC:01";
+    uchar bytes[6];
+    uint8_t values[6];
+    int z =0;
+
+    if( 6 == sscanf( mac_addr_str, "%x:%x:%x:%x:%x:%x%*c",
+        &values[0], &values[1], &values[2],
+        &values[3], &values[4], &values[5] ) )
+    {
+        /* convert to uint8_t */
+        for( z = 0; z < 6; ++z )
+            bytes[z] = (char) values[z];
+    }
+    delete_mac_entry_for_given_topo (values, 1);
+
+}
+
 /*
  * 1. Add all mac entries and wait all of them to expire
  * 2. Readd all mac entries and then update 2 mac entries, they should expire later than the rest
- * 3. Readd all mac entries and delete mac entry specific to topo
- * 5. Delete all mac entries of specfic topo
- * 6. Rest of the entries should expire
+ * 3. a. Readd all mac entries and delete mac entry specific to topo
+ *    b. Delete all mac entries of specfic topo
+ *    c. Rest of the entries should expire
+ * 4. Negative cases:
+ * 		a. try to delete non-existing mac for non existing topo
+ * 		b. try to delete non-existing mac for non-existing topo
+ * 		c. try to delete non-existing mac for existing topo
+ *
  */
 
 int main(void) {
@@ -139,6 +167,17 @@ int main(void) {
     add_macs_per_topo(3, 3);
     delete_mac_entry_for_specific_topo();
     delete_all_mac_entries_for_topo();
+
+    sleep(40);
+
+    printf("\nStarting Test case 4\n"
+                "a. try to delete non-existing mac for non existing topo\n"
+                "b. try to delete all non-existing mac for non-existing topo\n"
+    			"c. try to delete non-existing mac for existing topo\n");
+    delete_mac_entry_for_specific_topo();
+    delete_all_mac_entries_for_topo();
+    add_macs_per_topo(2, 2);
+    delete_non_existing_mac_entry_for_specific_topo();
 
     sleep(40);
 
