@@ -1,0 +1,760 @@
+!!!Executing the various test cases as mentioned below
+ * 1. Add all mac entries and wait all of them to expire.
+ * 2. Readd all mac entries and then update 2 mac entries, they should expire later than the rest.
+ * 3. a. Readd all mac entries and delete specific macs given mac address and topo id.
+ *    b. Delete all mac entries of specfic topo.
+ *    c .Rest of the entries should expire!!!
+
+Starting Test case 1 - Adding 5 macs each for 5 topos and waiting for them to expire
+New entry add for topo(1) aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27182048)
+New entry add for topo(1) aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27182208)
+New entry add for topo(1) aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27182368)
+New entry add for topo(1) aa:aa:aa:aa:aa:14 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27184352)
+New entry add for topo(1) aa:aa:aa:aa:aa:15 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27184512)
+New entry add for topo(2) aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27184768)
+New entry add for topo(2) aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27184928)
+New entry add for topo(2) aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27185088)
+New entry add for topo(2) aa:aa:aa:aa:aa:24 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27185248)
+New entry add for topo(2) aa:aa:aa:aa:aa:25 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27185408)
+New entry add for topo(3) aa:aa:aa:aa:aa:31 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27185664)
+New entry add for topo(3) aa:aa:aa:aa:aa:32 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27185824)
+New entry add for topo(3) aa:aa:aa:aa:aa:33 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27185984)
+New entry add for topo(3) aa:aa:aa:aa:aa:34 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27186144)
+New entry add for topo(3) aa:aa:aa:aa:aa:35 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27186304)
+New entry add for topo(4) aa:aa:aa:aa:aa:41 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27186560)
+New entry add for topo(4) aa:aa:aa:aa:aa:42 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27186720)
+New entry add for topo(4) aa:aa:aa:aa:aa:43 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27186880)
+New entry add for topo(4) aa:aa:aa:aa:aa:44 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27187040)
+New entry add for topo(4) aa:aa:aa:aa:aa:45 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27187200)
+New entry add for topo(5) aa:aa:aa:aa:aa:51 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27187456)
+New entry add for topo(5) aa:aa:aa:aa:aa:52 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27187616)
+New entry add for topo(5) aa:aa:aa:aa:aa:53 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27187776)
+New entry add for topo(5) aa:aa:aa:aa:aa:54 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27187936)
+New entry add for topo(5) aa:aa:aa:aa:aa:55 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+Mac entry added to expiry timer(27188096)
+Timer expiry handler called for timerid-27185984
+Before delete of MAC entry for TOPO:3, MAC table size is now=5 and preorder tree looks like->
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:32 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:34 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:35 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:33 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:31 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27185984) for TOPO(3) aa:aa:aa:aa:aa:33
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:32 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:34 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:35 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:31 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27185824
+Before delete of MAC entry for TOPO:3, MAC table size is now=4 and preorder tree looks like->
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:32 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:34 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:35 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:31 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27185824) for TOPO(3) aa:aa:aa:aa:aa:32
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:31 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:34 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:35 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27185664
+Before delete of MAC entry for TOPO:3, MAC table size is now=3 and preorder tree looks like->
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:31 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:34 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:35 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27185664) for TOPO(3) aa:aa:aa:aa:aa:31
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:34 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:35 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27185408
+Before delete of MAC entry for TOPO:2, MAC table size is now=5 and preorder tree looks like->
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:24 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:25 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27185408) for TOPO(2) aa:aa:aa:aa:aa:25
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:24 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27185248
+Before delete of MAC entry for TOPO:2, MAC table size is now=4 and preorder tree looks like->
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:24 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27185248) for TOPO(2) aa:aa:aa:aa:aa:24
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27185088
+Before delete of MAC entry for TOPO:2, MAC table size is now=3 and preorder tree looks like->
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27185088) for TOPO(2) aa:aa:aa:aa:aa:23
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27184928
+Before delete of MAC entry for TOPO:2, MAC table size is now=2 and preorder tree looks like->
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27184928) for TOPO(2) aa:aa:aa:aa:aa:22
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27184768
+Before delete of MAC entry for TOPO:2, MAC table size is now=1 and preorder tree looks like->
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27184768) for TOPO(2) aa:aa:aa:aa:aa:21
+Timer expiry handler called for timerid-27184512
+Before delete of MAC entry for TOPO:1, MAC table size is now=5 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:14 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:15 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27184512) for TOPO(1) aa:aa:aa:aa:aa:15
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:14 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27184352
+Before delete of MAC entry for TOPO:1, MAC table size is now=4 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:14 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27184352) for TOPO(1) aa:aa:aa:aa:aa:14
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27182368
+Before delete of MAC entry for TOPO:1, MAC table size is now=3 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27182368) for TOPO(1) aa:aa:aa:aa:aa:13
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27182208
+Before delete of MAC entry for TOPO:1, MAC table size is now=2 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27182208) for TOPO(1) aa:aa:aa:aa:aa:12
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27182048
+Before delete of MAC entry for TOPO:1, MAC table size is now=1 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27182048) for TOPO(1) aa:aa:aa:aa:aa:11
+Timer expiry handler called for timerid-27188096
+Before delete of MAC entry for TOPO:5, MAC table size is now=5 and preorder tree looks like->
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:52 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:54 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:55 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:53 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:51 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27188096) for TOPO(5) aa:aa:aa:aa:aa:55
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:52 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:54 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:53 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:51 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27187936
+Before delete of MAC entry for TOPO:5, MAC table size is now=4 and preorder tree looks like->
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:52 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:54 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:53 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:51 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27187936) for TOPO(5) aa:aa:aa:aa:aa:54
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:52 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:53 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:51 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27187776
+Before delete of MAC entry for TOPO:5, MAC table size is now=3 and preorder tree looks like->
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:52 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:53 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:51 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27187776) for TOPO(5) aa:aa:aa:aa:aa:53
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:52 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:51 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27187616
+Before delete of MAC entry for TOPO:5, MAC table size is now=2 and preorder tree looks like->
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:52 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:51 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27187616) for TOPO(5) aa:aa:aa:aa:aa:52
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:51 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27187456
+Before delete of MAC entry for TOPO:5, MAC table size is now=1 and preorder tree looks like->
+MAC node info:Topo(5)- aa:aa:aa:aa:aa:51 DYNAMIC Fa0/5 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27187456) for TOPO(5) aa:aa:aa:aa:aa:51
+Timer expiry handler called for timerid-27187200
+Before delete of MAC entry for TOPO:4, MAC table size is now=5 and preorder tree looks like->
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:42 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:44 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:45 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:43 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:41 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27187200) for TOPO(4) aa:aa:aa:aa:aa:45
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:42 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:44 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:43 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:41 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27187040
+Before delete of MAC entry for TOPO:4, MAC table size is now=4 and preorder tree looks like->
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:42 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:44 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:43 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:41 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27187040) for TOPO(4) aa:aa:aa:aa:aa:44
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:42 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:43 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:41 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27186880
+Before delete of MAC entry for TOPO:4, MAC table size is now=3 and preorder tree looks like->
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:42 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:43 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:41 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27186880) for TOPO(4) aa:aa:aa:aa:aa:43
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:42 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:41 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27186720
+Before delete of MAC entry for TOPO:4, MAC table size is now=2 and preorder tree looks like->
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:42 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:41 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27186720) for TOPO(4) aa:aa:aa:aa:aa:42
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:41 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27186560
+Before delete of MAC entry for TOPO:4, MAC table size is now=1 and preorder tree looks like->
+MAC node info:Topo(4)- aa:aa:aa:aa:aa:41 DYNAMIC Fa0/4 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27186560) for TOPO(4) aa:aa:aa:aa:aa:41
+Timer expiry handler called for timerid-27186304
+Before delete of MAC entry for TOPO:3, MAC table size is now=2 and preorder tree looks like->
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:34 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:35 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27186304) for TOPO(3) aa:aa:aa:aa:aa:35
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:34 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+*******
+Timer expiry handler called for timerid-27186144
+Before delete of MAC entry for TOPO:3, MAC table size is now=1 and preorder tree looks like->
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:34 DYNAMIC Fa0/3 Mon Jun 25 02:05:32 2018
+
+*******
+Removing MAC from timer(27186144) for TOPO(3) aa:aa:aa:aa:aa:34
+
+Starting Test case 2 - Adding 4 macs each for 3 topos, updating 2 macs and they would expire later
+New entry add for topo(1) aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+Mac entry added to expiry timer(27186144)
+New entry add for topo(1) aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+Mac entry added to expiry timer(27186304)
+New entry add for topo(1) aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+Mac entry added to expiry timer(27186400)
+New entry add for topo(1) aa:aa:aa:aa:aa:14 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+Mac entry added to expiry timer(27186560)
+New entry add for topo(2) aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+Mac entry added to expiry timer(27186880)
+New entry add for topo(2) aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+Mac entry added to expiry timer(27187040)
+New entry add for topo(2) aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+Mac entry added to expiry timer(27187200)
+New entry add for topo(2) aa:aa:aa:aa:aa:24 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+Mac entry added to expiry timer(27187296)
+New entry add for topo(3) aa:aa:aa:aa:aa:31 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+Mac entry added to expiry timer(27187616)
+New entry add for topo(3) aa:aa:aa:aa:aa:32 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+Mac entry added to expiry timer(27187776)
+New entry add for topo(3) aa:aa:aa:aa:aa:33 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+Mac entry added to expiry timer(27187936)
+New entry add for topo(3) aa:aa:aa:aa:aa:34 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+Mac entry added to expiry timer(27188096)
+Removing MAC from timer(27186144) for TOPO(1) aa:aa:aa:aa:aa:1
+Mac entry added to expiry timer(27186144)
+Removing MAC from timer(27187616) for TOPO(3) aa:aa:aa:aa:aa:31
+Mac entry added to expiry timer(27187616)
+Timer expiry handler called for timerid-27187296
+Before delete of MAC entry for TOPO:2, MAC table size is now=4 and preorder tree looks like->
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:24 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+*******
+Removing MAC from timer(27187296) for TOPO(2) aa:aa:aa:aa:aa:24
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+*******
+Timer expiry handler called for timerid-27187200
+Before delete of MAC entry for TOPO:2, MAC table size is now=3 and preorder tree looks like->
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+*******
+Removing MAC from timer(27187200) for TOPO(2) aa:aa:aa:aa:aa:23
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+*******
+Timer expiry handler called for timerid-27187040
+Before delete of MAC entry for TOPO:2, MAC table size is now=2 and preorder tree looks like->
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+*******
+Removing MAC from timer(27187040) for TOPO(2) aa:aa:aa:aa:aa:22
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+*******
+Timer expiry handler called for timerid-27186880
+Before delete of MAC entry for TOPO:2, MAC table size is now=1 and preorder tree looks like->
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:06:22 2018
+
+*******
+Removing MAC from timer(27186880) for TOPO(2) aa:aa:aa:aa:aa:21
+Timer expiry handler called for timerid-27186560
+Before delete of MAC entry for TOPO:1, MAC table size is now=4 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:14 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:1 DYNAMIC Fa0/3 Mon Jun 25 02:06:27 2018
+
+*******
+Removing MAC from timer(27186560) for TOPO(1) aa:aa:aa:aa:aa:14
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:1 DYNAMIC Fa0/3 Mon Jun 25 02:06:27 2018
+
+*******
+Timer expiry handler called for timerid-27186400
+Before delete of MAC entry for TOPO:1, MAC table size is now=3 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:1 DYNAMIC Fa0/3 Mon Jun 25 02:06:27 2018
+
+*******
+Removing MAC from timer(27186400) for TOPO(1) aa:aa:aa:aa:aa:13
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:1 DYNAMIC Fa0/3 Mon Jun 25 02:06:27 2018
+
+*******
+Timer expiry handler called for timerid-27186304
+Before delete of MAC entry for TOPO:1, MAC table size is now=2 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:1 DYNAMIC Fa0/3 Mon Jun 25 02:06:27 2018
+
+*******
+Removing MAC from timer(27186304) for TOPO(1) aa:aa:aa:aa:aa:12
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:1 DYNAMIC Fa0/3 Mon Jun 25 02:06:27 2018
+
+*******
+Timer expiry handler called for timerid-27188096
+Before delete of MAC entry for TOPO:3, MAC table size is now=4 and preorder tree looks like->
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:32 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:33 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:34 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:31 DYNAMIC Fa0/11 Mon Jun 25 02:06:27 2018
+
+*******
+Removing MAC from timer(27188096) for TOPO(3) aa:aa:aa:aa:aa:34
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:32 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:33 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:31 DYNAMIC Fa0/11 Mon Jun 25 02:06:27 2018
+
+*******
+Timer expiry handler called for timerid-27187936
+Before delete of MAC entry for TOPO:3, MAC table size is now=3 and preorder tree looks like->
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:32 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:33 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:31 DYNAMIC Fa0/11 Mon Jun 25 02:06:27 2018
+
+*******
+Removing MAC from timer(27187936) for TOPO(3) aa:aa:aa:aa:aa:33
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:32 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:31 DYNAMIC Fa0/11 Mon Jun 25 02:06:27 2018
+
+*******
+Timer expiry handler called for timerid-27187776
+Before delete of MAC entry for TOPO:3, MAC table size is now=2 and preorder tree looks like->
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:32 DYNAMIC Fa0/3 Mon Jun 25 02:06:22 2018
+
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:31 DYNAMIC Fa0/11 Mon Jun 25 02:06:27 2018
+
+*******
+Removing MAC from timer(27187776) for TOPO(3) aa:aa:aa:aa:aa:32
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:31 DYNAMIC Fa0/11 Mon Jun 25 02:06:27 2018
+
+*******
+Timer expiry handler called for timerid-27187616
+Before delete of MAC entry for TOPO:3, MAC table size is now=1 and preorder tree looks like->
+MAC node info:Topo(3)- aa:aa:aa:aa:aa:31 DYNAMIC Fa0/11 Mon Jun 25 02:06:27 2018
+
+*******
+Removing MAC from timer(27187616) for TOPO(3) aa:aa:aa:aa:aa:31
+Timer expiry handler called for timerid-27186144
+Before delete of MAC entry for TOPO:1, MAC table size is now=1 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:1 DYNAMIC Fa0/3 Mon Jun 25 02:06:27 2018
+
+*******
+Removing MAC from timer(27186144) for TOPO(1) aa:aa:aa:aa:aa:1
+
+Starting Test case 3
+a. Adding 3 macs for 3 topos, deleting an mac entry for topo 1
+b. followed by delete of all mac entries under topo 3
+c. Waiting for the rest of the macs to expire(2 macs from topo 1 and 3 macs from topo 2)
+New entry add for topo(1) aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+Mac entry added to expiry timer(27186144)
+New entry add for topo(1) aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+Mac entry added to expiry timer(27186720)
+New entry add for topo(1) aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+Mac entry added to expiry timer(27187616)
+New entry add for topo(2) aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:07:07 2018
+
+Mac entry added to expiry timer(27187936)
+New entry add for topo(2) aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:07:07 2018
+
+Mac entry added to expiry timer(27188096)
+New entry add for topo(2) aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:07:07 2018
+
+Mac entry added to expiry timer(27186304)
+New entry add for topo(3) aa:aa:aa:aa:aa:31 DYNAMIC Fa0/3 Mon Jun 25 02:07:07 2018
+
+Mac entry added to expiry timer(27186560)
+New entry add for topo(3) aa:aa:aa:aa:aa:32 DYNAMIC Fa0/3 Mon Jun 25 02:07:07 2018
+
+Mac entry added to expiry timer(27187456)
+New entry add for topo(3) aa:aa:aa:aa:aa:33 DYNAMIC Fa0/3 Mon Jun 25 02:07:07 2018
+
+Mac entry added to expiry timer(27186880)
+Before delete of MAC entry for TOPO:1, MAC table size is now=3 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+*******
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+*******
+Delete of all MAC entries for topo-:3
+Timer expiry handler called for timerid-27188096
+Before delete of MAC entry for TOPO:2, MAC table size is now=3 and preorder tree looks like->
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:22 DYNAMIC Fa0/2 Mon Jun 25 02:07:07 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:07:07 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:07:07 2018
+
+*******
+Removing MAC from timer(27188096) for TOPO(2) aa:aa:aa:aa:aa:22
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:07:07 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:07:07 2018
+
+*******
+Timer expiry handler called for timerid-27187936
+Before delete of MAC entry for TOPO:2, MAC table size is now=2 and preorder tree looks like->
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:21 DYNAMIC Fa0/2 Mon Jun 25 02:07:07 2018
+
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:07:07 2018
+
+*******
+Removing MAC from timer(27187936) for TOPO(2) aa:aa:aa:aa:aa:21
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:07:07 2018
+
+*******
+Timer expiry handler called for timerid-27187616
+Before delete of MAC entry for TOPO:1, MAC table size is now=3 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:13 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+*******
+Removing MAC from timer(27187616) for TOPO(1) aa:aa:aa:aa:aa:13
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+*******
+Timer expiry handler called for timerid-27186720
+Before delete of MAC entry for TOPO:1, MAC table size is now=2 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:12 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+*******
+Removing MAC from timer(27186720) for TOPO(1) aa:aa:aa:aa:aa:12
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+*******
+Timer expiry handler called for timerid-27186144
+Before delete of MAC entry for TOPO:1, MAC table size is now=1 and preorder tree looks like->
+MAC node info:Topo(1)- aa:aa:aa:aa:aa:11 DYNAMIC Fa0/1 Mon Jun 25 02:07:07 2018
+
+*******
+Removing MAC from timer(27186144) for TOPO(1) aa:aa:aa:aa:aa:11
+Timer expiry handler called for timerid-27186304
+Before delete of MAC entry for TOPO:2, MAC table size is now=1 and preorder tree looks like->
+MAC node info:Topo(2)- aa:aa:aa:aa:aa:23 DYNAMIC Fa0/2 Mon Jun 25 02:07:07 2018
+
+*******
+Removing MAC from timer(27186304) for TOPO(2) aa:aa:aa:aa:aa:23

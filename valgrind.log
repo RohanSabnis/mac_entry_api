@@ -1,0 +1,31 @@
+==11206== Memcheck, a memory error detector
+==11206== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==11206== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==11206== Command: ./test_program
+==11206== Parent PID: 61769
+==11206== 
+==11206== Thread 2:
+==11206== Invalid read of size 8
+==11206==    at 0x400EE8: mac_expiration_timer_handler (in /nobackup/rsabnis/mac-table-api/src/test_program)
+==11206==    by 0x402CE6: _timer_thread (in /nobackup/rsabnis/mac-table-api/src/test_program)
+==11206==    by 0x3570A07AA0: start_thread (in /lib64/libpthread-2.12.so)
+==11206==    by 0x56456FF: ???
+==11206==  Address 0x5649368 is 8 bytes inside a block of size 40 free'd
+==11206==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==11206==    by 0x401EC7: avltree_delete_node (in /nobackup/rsabnis/mac-table-api/src/test_program)
+==11206==    by 0x401F40: avltree_delete_node (in /nobackup/rsabnis/mac-table-api/src/test_program)
+==11206==    by 0x4015AF: delete_mac_entry_for_given_topo (in /nobackup/rsabnis/mac-table-api/src/test_program)
+==11206==    by 0x400F0A: mac_expiration_timer_handler (in /nobackup/rsabnis/mac-table-api/src/test_program)
+==11206==    by 0x402CE6: _timer_thread (in /nobackup/rsabnis/mac-table-api/src/test_program)
+==11206==    by 0x3570A07AA0: start_thread (in /lib64/libpthread-2.12.so)
+==11206==    by 0x56456FF: ???
+==11206== 
+==11206== 
+==11206== HEAP SUMMARY:
+==11206==     in use at exit: 0 bytes in 0 blocks
+==11206==   total heap usage: 418 allocs, 418 frees, 15,024 bytes allocated
+==11206== 
+==11206== All heap blocks were freed -- no leaks are possible
+==11206== 
+==11206== For counts of detected and suppressed errors, rerun with: -v
+==11206== ERROR SUMMARY: 3 errors from 1 contexts (suppressed: 8 from 6)

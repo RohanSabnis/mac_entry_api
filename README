@@ -1,0 +1,39 @@
+Implementation of mac-entries management
+
+The requirements were as below:
+API that inserts mac-entry into the mac database
+API that removes mac-entry from the mac database
+Each mac-entry is associated with a specific <topo>
+Each mac-entry when inserted has a default aging time (let’s say 10 seconds)
+Remove mac-entry from the database when it is aged out
+API that explicitly removes all mac-entries related to a specific <topo>
+
+
+In the interest of time-
+1. One timer is run per mac object to handle its expiry. given more time could have implemented the below approach
+Depending on the timeout window, have those many periodic timers running.
+Each timer is mapped to a position in the array, which points to list of 
+mac entries that are to expire on expiry of that particular time.
+
+2. Also the current API are suitable for single-threaded calls. It depends on the calling process, to control the calls to the API.
+
+3. The timeout value is kept fixed as of now. But can be store at global level and cap be updated accordingly. 
+This would also involve addition task of reseting the timer intervals for the mac entries. 
+
+
+Testing done:
+1. PLease find the test.c file which contains descriptions of the cases run
+2. The output has been captured in output.log
+3. Valgrind tool was run to check mem leak and errors (valgrind.log). There are no leaks reported with the current code.
+However there couple of errors reported and they seem to do with the downloaded online code for libraries. 
+I tried to get them addressed but couldn't in the interest of time.
+
+
+#############################
+To run the program:
+go to (root)/src
+then ./Makefile
+then ./test_program to execute the program
+
+For valgrind run
+valgrind --leak-check=full --tool=memcheck --log-file=valgrind.log ./test_program
