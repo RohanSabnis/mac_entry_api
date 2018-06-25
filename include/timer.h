@@ -4,8 +4,8 @@
 
 typedef enum
 {
-TIMER_SINGLE_SHOT = 0, /*Periodic Timer*/
-TIMER_PERIODIC         /*Single Shot Timer*/
+    TIMER_SINGLE_SHOT = 0, /*Periodic Timer*/
+    TIMER_PERIODIC         /*Single Shot Timer*/
 } t_timer;
 
 typedef void (*time_handler)(size_t timer_id, void * user_data);

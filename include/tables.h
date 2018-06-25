@@ -29,8 +29,8 @@ typedef uint32_t topo_id_t;
 #define AGEOUT_VALUE 10
 
 typedef enum {
-	EOK = 0,
-	EERR,
+    EOK = 0,
+    EERR,
 } err_types_t;
 
 /**
@@ -58,8 +58,8 @@ typedef struct {
  * Type definition for the mac address.
  */
 typedef struct {
-	/** Linkage to topo entry in topo table */
-	topo_entry_t *topo_entry_ptr;
+    /** Linkage to topo entry in topo table */
+    topo_entry_t *topo_entry_ptr;
     /** Key: MAC address data */
     uchar mac_address[MAC_ADDR_BYTES];
     /** Entry Type (Dynamic/Static) */
@@ -76,8 +76,8 @@ typedef struct {
    next stack node */
 typedef struct sNode
 {
-	avltree_t *t;
-	struct sNode *next;
+    avltree_t *t;
+    struct sNode *next;
 } sNode_t;
 
 
